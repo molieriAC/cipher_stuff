@@ -1,2 +1,3 @@
 # cipher_stuff
-Programs for different types of cyphers so I don't have to decipher everything my son makes by hand
+
+My son got a book about ciphers and now he keeps writing, or asking me to write, coded messages. I'm to lazy to do that by hand so I'll write scripts that do the work and put them here from time to time.
