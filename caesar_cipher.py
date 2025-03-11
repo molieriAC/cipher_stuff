@@ -1,4 +1,6 @@
 import sys
+# add the symbol_dict if needed later
+# from symbol_replacements import symbol_dict
 
 
 def caesar_cipher(shift, text):
