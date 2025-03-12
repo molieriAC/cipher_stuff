@@ -2,6 +2,7 @@ import sys
 # add the symbol_dict if needed later
 # from symbol_replacements import symbol_dict
 
+# TODO: Implement brute force decoding if the key is not present
 
 def caesar_cipher(shift, text):
     """
