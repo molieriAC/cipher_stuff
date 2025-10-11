@@ -4,6 +4,7 @@ import sys
 
 # TODO: Implement brute force decoding if the key is not present
 
+
 def caesar_cipher(shift, text):
     """
     Performs a Caesar cipher based on the given text.
@@ -39,7 +40,8 @@ def main():
     if len(sys.argv) != 3:
         print("Usage: python cipher.py <shift_value> <text>")
         print(
-            "  <shift_value>: A number from -25 to 25 specifying the shift amount.\nNegative numbers indicate a shift backward"
+            """<shift_value>: A number from -25 to 25 specifying the shift amount.
+            Negative numbers indicate a shift backward"""
         )
         print("  <text>: The text to process")
         sys.exit(1)

@@ -23,13 +23,13 @@ symbol_dict = bidict(
         "p": "\\",
         "q": ":",
         "r": ";",
-        "s": "'",
-        "t": '"',
+        "s": "\'",
+        "t": '\"',
         "u": "<",
-        "y": ">",
-        "v": "`",
-        "w": "/",
-        "x": "?",
+        "v": ">",
+        "w": "`",
+        "x": "/",
+        "y": "?",
         "z": "~",
     }
 )
@@ -65,11 +65,13 @@ def symbol_replace(text):
 
 def main():
     # Check if the right number of arguments have been passed
-    if len(sys.argv) != 2:
-        print("The text to decode/encode must be passed")
-        sys.exit(1)
+    # if len(sys.argv) != 2:
+    #     print("The text to decode/encode must be passed")
+    #     sys.exit(1)
 
-    text = sys.argv[1]
+    text = input("enter text to be encoded/decoded: ")
+
+    # text = fr"{sys.argv[1]}"
 
     # Process the text and display the result
     result = symbol_replace(text)
