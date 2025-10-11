@@ -23,22 +23,25 @@ symbol_dict = bidict(
         "p": "\\",
         "q": ":",
         "r": ";",
-        "s": "\'",
-        "t": '\"',
+        "s": "'",
+        "t": '"',
         "u": "<",
         "v": ">",
         "w": "`",
         "x": "/",
         "y": "?",
         "z": "~",
+        # Add spaces so they can be part of the message
+        # This is the lazy implementations
+        " ": " ",
     }
 )
 
 
 def symbol_replace(text):
     """
-    Replace symbols with letters and vis-versa based on a defined list. Right now the function
-    assumes that the text passed will be decodable.
+    Replace symbols with letters and vis-versa based on a defined list.
+    Right now the function assumes that the text passed will be decodable.
 
     Args:
         text (string): string of text or symbols to be encoded/decoded
@@ -50,15 +53,19 @@ def symbol_replace(text):
     result = ""
 
     for char in text:
-        # Only shift alphabetic characters
-        if char.isalpha():
+        # Only shift characters in symbol_dict
+        char_lower = char.lower()
+        if char_lower in symbol_dict.keys():
             # convert char to symbol
-            symbol_temp = symbol_dict[char.lower()]
+            symbol_temp = symbol_dict[char_lower]
 
             result += str(symbol_temp)
-        else:
+        elif char_lower in symbol_dict.values():
             # Keep non-alphabetic characters unchanged
-            result += symbol_dict.inverse[char]
+            result += symbol_dict.inverse[char_lower]
+        # Pass character back to output if its not in the dict
+        else:
+            result += char_lower
 
     return result
 
